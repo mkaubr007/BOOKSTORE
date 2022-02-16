@@ -27,6 +27,7 @@ var routes = function routes() {
   });
   router.use('/users', _user["default"]);
   router.use('/book', _book.bookRouter);
+  router.use('/ascending', _book.ascendingOrderRouter);
   return router;
 };
 

@@ -2,7 +2,7 @@
 import express from 'express';
 const router = express.Router();
 import userRoute from './user.route';
-import {bookRouter} from './book.route';
+import {bookRouter,ascendingOrderRouter} from './book.route';
 /**
  * Function contains Application routes
  *
@@ -14,6 +14,7 @@ const routes = () => {
   });
   router.use('/users', userRoute);
   router.use('/book', bookRouter);
+  router.use('/ascending', ascendingOrderRouter);
   return router;
 };
 
