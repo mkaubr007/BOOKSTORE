@@ -8,3 +8,6 @@ import { upload } from '../middlewares/upload';
 export const bookRouter = express.Router();
 //route to add book
 bookRouter.post('/', userAuth, userRole, upload.single('image'), newBookValidator, bookController.addBook);
+
+//route to get book
+bookRouter.get('/', userAuth, bookController.getBook);

@@ -28,4 +28,6 @@ var bookRouter = _express["default"].Router(); //route to add book
 
 
 exports.bookRouter = bookRouter;
-bookRouter.post('/', _auth.userAuth, _auth.userRole, _upload.upload.single('image'), _bookValidator.newBookValidator, bookController.addBook);
+bookRouter.post('/', _auth.userAuth, _auth.userRole, _upload.upload.single('image'), _bookValidator.newBookValidator, bookController.addBook); //route to get book
+
+bookRouter.get('/', _auth.userAuth, bookController.getBook);
