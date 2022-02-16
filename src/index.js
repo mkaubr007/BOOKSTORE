@@ -13,7 +13,8 @@ import {
   notFound
 } from './middlewares/error.middleware';
 import logger, { logStream } from './config/logger';
-
+import path from 'path';
+import multer from 'multer';
 import morgan from 'morgan';
 
 const app = express();
@@ -30,6 +31,10 @@ app.use(morgan('combined', { stream: logStream }));
 database();
 
 app.use(`/api/${api_version}`, routes());
+
+const upload = multer();
+app.use(upload.single());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(appErrorHandler);
 app.use(genericErrorHandler);
 app.use(notFound);

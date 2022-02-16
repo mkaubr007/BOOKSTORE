@@ -3,24 +3,26 @@ import { Schema, model } from 'mongoose';
 
 const userSchema = new Schema(
   {
-    firstName: {
+    author: {
       type: String,
       required: true
     },
-    lastName: {
+    title: {
       type: String,
       required: true
     },
-    email: {
-      type: String,
-      required: true,
-      unique: true
+    image:{
+        type: String,
     },
-    password: {
-      type: String,
+    quantity: {
+      type: Number,
       required: true
     },
-    role: {
+    price: {
+      type: Number,
+      required: true
+    },
+    description: {
       type: String,
       required: true
     }
@@ -29,5 +31,5 @@ const userSchema = new Schema(
     timestamps: true
   }
 );
-const User = model('User', userSchema);
-export default User;
+const Book = model('Book', userSchema);
+export default Book;

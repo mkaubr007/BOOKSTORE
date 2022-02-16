@@ -9,30 +9,32 @@ var _mongoose = require("mongoose");
 
 /* eslint-disable prettier/prettier */
 var userSchema = new _mongoose.Schema({
-  firstName: {
+  author: {
     type: String,
     required: true
   },
-  lastName: {
+  title: {
     type: String,
     required: true
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true
+  image: {
+    type: String
   },
-  password: {
-    type: String,
+  quantity: {
+    type: Number,
     required: true
   },
-  role: {
+  price: {
+    type: Number,
+    required: true
+  },
+  description: {
     type: String,
     required: true
   }
 }, {
   timestamps: true
 });
-var User = (0, _mongoose.model)('User', userSchema);
-var _default = User;
+var Book = (0, _mongoose.model)('Book', userSchema);
+var _default = Book;
 exports["default"] = _default;

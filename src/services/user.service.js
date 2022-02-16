@@ -30,4 +30,3 @@ export const login = async (body) => {
     throw new Error('Invalid user');
   }
 };
-

@@ -11,6 +11,9 @@ var _express = _interopRequireDefault(require("express"));
 
 var _user = _interopRequireDefault(require("./user.route"));
 
+var _book = require("./book.route");
+
+/* eslint-disable prettier/prettier */
 var router = _express["default"].Router();
 
 /**
@@ -23,6 +26,7 @@ var routes = function routes() {
     res.json('Welcome');
   });
   router.use('/users', _user["default"]);
+  router.use('/book', _book.bookRouter);
   return router;
 };
 

@@ -12,7 +12,6 @@
     "test:coverage": "cross-env NODE_ENV=test nyc --require @babel/register --reporter lcov --reporter text mocha --exit --recursive --timeout=5000 tests/**/*.js",
     "lint": "eslint . --ext .js",
     "lint-fix": "eslint . --ext .js --fix"
-   
   },
   "author": "Tolustar",
   "license": "MIT",
@@ -29,6 +28,7 @@
     "mailgun-js": "^0.22.0",
     "mongoose": "^5.10.2",
     "morgan": "^1.10.0",
+    "multer": "^1.4.4",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.0"
   },
