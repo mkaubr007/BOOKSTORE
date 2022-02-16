@@ -7,7 +7,7 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getBook = exports.descendingOrder = exports.ascendingOrder = exports.addBook = void 0;
+exports.getBook = exports.descendingOrder = exports.ascendingOrder = exports.alphabeticalOrder = exports.addBook = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -214,6 +214,55 @@ var descendingOrder = /*#__PURE__*/function () {
   return function descendingOrder(_x10, _x11, _x12) {
     return _ref4.apply(this, arguments);
   };
-}();
+}(); // Controller for sort book in alphabetical order
+
+/**
+ *
+ * @param {object} req request object
+ * @param {object} res  response object
+ * @param {object} next
+ */
+
 
 exports.descendingOrder = descendingOrder;
+
+var alphabeticalOrder = /*#__PURE__*/function () {
+  var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5(req, res, next) {
+    var data;
+    return _regenerator["default"].wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.prev = 0;
+            _context5.next = 3;
+            return BookService.alphabeticalOrder();
+
+          case 3:
+            data = _context5.sent;
+            res.status(_httpStatusCodes["default"].OK).json({
+              code: _httpStatusCodes["default"].OK,
+              data: data,
+              message: "Your Books..."
+            });
+            _context5.next = 10;
+            break;
+
+          case 7:
+            _context5.prev = 7;
+            _context5.t0 = _context5["catch"](0);
+            next(_context5.t0);
+
+          case 10:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5, null, [[0, 7]]);
+  }));
+
+  return function alphabeticalOrder(_x13, _x14, _x15) {
+    return _ref5.apply(this, arguments);
+  };
+}();
+
+exports.alphabeticalOrder = alphabeticalOrder;

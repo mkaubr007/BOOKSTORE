@@ -29,6 +29,7 @@ var routes = function routes() {
   router.use('/book', _book.bookRouter);
   router.use('/ascending', _book.ascendingOrderRouter);
   router.use('/descending', _book.descendingOrderRouter);
+  router.use('/alphabetical', _book.alphabeticalOrderRouter);
   return router;
 };
 

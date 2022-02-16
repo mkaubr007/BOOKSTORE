@@ -7,7 +7,7 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.descendingOrderRouter = exports.bookRouter = exports.ascendingOrderRouter = void 0;
+exports.descendingOrderRouter = exports.bookRouter = exports.ascendingOrderRouter = exports.alphabeticalOrderRouter = void 0;
 
 var _express = _interopRequireDefault(require("express"));
 
@@ -40,4 +40,9 @@ ascendingOrderRouter.get('/', _auth.userAuth, bookController.ascendingOrder); //
 var descendingOrderRouter = _express["default"].Router();
 
 exports.descendingOrderRouter = descendingOrderRouter;
-descendingOrderRouter.get('/', _auth.userAuth, bookController.descendingOrder);
+descendingOrderRouter.get('/', _auth.userAuth, bookController.descendingOrder); //route to sort books in alphabetical order by title
+
+var alphabeticalOrderRouter = _express["default"].Router();
+
+exports.alphabeticalOrderRouter = alphabeticalOrderRouter;
+alphabeticalOrderRouter.get('/', _auth.userAuth, bookController.alphabeticalOrder);

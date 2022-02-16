@@ -5,7 +5,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getBook = exports.descendingOrder = exports.ascendingOrder = exports.addBook = void 0;
+exports.getBook = exports.descendingOrder = exports.ascendingOrder = exports.alphabeticalOrder = exports.addBook = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -132,6 +132,42 @@ var descendingOrder = /*#__PURE__*/function () {
   return function descendingOrder() {
     return _ref4.apply(this, arguments);
   };
-}();
+}(); //sort order in alphabetical order
+
 
 exports.descendingOrder = descendingOrder;
+
+var alphabeticalOrder = /*#__PURE__*/function () {
+  var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5() {
+    var data;
+    return _regenerator["default"].wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return _book["default"].find({
+              'title': {
+                '$exists': true
+              }
+            }).sort({
+              'title': 1
+            });
+
+          case 2:
+            data = _context5.sent;
+            return _context5.abrupt("return", data);
+
+          case 4:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+
+  return function alphabeticalOrder() {
+    return _ref5.apply(this, arguments);
+  };
+}();
+
+exports.alphabeticalOrder = alphabeticalOrder;
