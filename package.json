@@ -12,6 +12,7 @@
     "test:coverage": "cross-env NODE_ENV=test nyc --require @babel/register --reporter lcov --reporter text mocha --exit --recursive --timeout=5000 tests/**/*.js",
     "lint": "eslint . --ext .js",
     "lint-fix": "eslint . --ext .js --fix"
+   
   },
   "author": "Tolustar",
   "license": "MIT",

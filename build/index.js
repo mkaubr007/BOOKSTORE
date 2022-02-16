@@ -1,6 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable quotes */
-/* eslint-disable prettier/prettier */
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
