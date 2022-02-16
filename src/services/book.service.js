@@ -18,3 +18,9 @@ export const ascendingOrder = async () => {
     const data = await Book.find();
     return data;
   };
+
+//sort order in descending order
+export const descendingOrder = async () => {
+    const data = await Book.find().sort({ updatedAt: -1 });
+    return data;
+  };

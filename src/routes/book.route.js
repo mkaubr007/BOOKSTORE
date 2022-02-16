@@ -15,3 +15,7 @@ bookRouter.get('/', userAuth, bookController.getBook);
 //route to sort books in ascending order
 export const ascendingOrderRouter = express.Router();
 ascendingOrderRouter.get('/', userAuth, bookController.ascendingOrder);
+
+//route to sort books in descending order
+export const descendingOrderRouter = express.Router();
+descendingOrderRouter.get('/', userAuth, bookController.descendingOrder);

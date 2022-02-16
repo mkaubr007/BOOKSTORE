@@ -61,3 +61,23 @@ export const addBook = async (req, res, next) => {
       next(err);
     }
   };
+
+  // Controller for sort book in descending order
+/**
+ *
+ * @param {object} req request object
+ * @param {object} res  response object
+ * @param {object} next
+ */
+ export const descendingOrder = async (req, res, next) => {
+    try {
+      const data = await BookService.descendingOrder();
+      res.status(HttpStatus.OK).json({
+        code: HttpStatus.OK,
+        data: data,
+        message: `Your Books...`
+      });
+    } catch (err) {
+      next(err);
+    }
+  };

@@ -5,7 +5,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getBook = exports.ascendingOrder = exports.addBook = void 0;
+exports.getBook = exports.descendingOrder = exports.ascendingOrder = exports.addBook = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -100,6 +100,38 @@ var ascendingOrder = /*#__PURE__*/function () {
   return function ascendingOrder() {
     return _ref3.apply(this, arguments);
   };
-}();
+}(); //sort order in descending order
+
 
 exports.ascendingOrder = ascendingOrder;
+
+var descendingOrder = /*#__PURE__*/function () {
+  var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4() {
+    var data;
+    return _regenerator["default"].wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return _book["default"].find().sort({
+              updatedAt: -1
+            });
+
+          case 2:
+            data = _context4.sent;
+            return _context4.abrupt("return", data);
+
+          case 4:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+
+  return function descendingOrder() {
+    return _ref4.apply(this, arguments);
+  };
+}();
+
+exports.descendingOrder = descendingOrder;
